@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Publication Scraper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <button id="dark-mode-toggle">Toggle Dark Mode</button>
+    
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="/">Search</a></li>
+                <li><a href="/results">Results</a></li>
+                <li><a href="#">Trends</a></li>
+            </ul>
+        </aside>
+        
+        <main class="main-content">
+            <h1>Dashboard</h1>
+            <p>Welcome to the Publication Scraper Dashboard</p>
+        </main>
+    </div>
+    <div class="trends-section">
+        <h2>Publication Trends</h2>
+        <canvas id="publicationChart"></canvas>
+    </div>
+    
+</body>
+</html>

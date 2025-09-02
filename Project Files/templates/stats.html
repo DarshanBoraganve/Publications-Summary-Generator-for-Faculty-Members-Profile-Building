@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publication Statistics</title>
+    <a href="/" class="btn">Back to Home</a>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Publication Statistics</h1>
+        
+        <div class="chart-container">
+            <h2>Top Authors by Publication Count</h2>
+            <canvas id="authorChart"></canvas>
+        </div>
+        
+        <div class="chart-container">
+            <h2>Publications by Year</h2>
+            <canvas id="yearChart"></canvas>
+        </div>
+        
+        <a href="/" class="btn">Back to Home</a>
+    </div>
+
+    <script>
+        // Sample data - replace with actual data from Flask
+        const authorData = {
+            labels: ['Author 1', 'Author 2', 'Author 3', 'Author 4', 'Author 5'],
+            datasets: [{
+                label: 'Publications',
+                data: [25, 20, 15, 10, 8],
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        const yearData = {
+            labels: ['2018', '2019', '2020', '2021', '2022', '2023'],
+            datasets: [{
+                label: 'Publications',
+                data: [5, 8, 12, 15, 18, 20],
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                fill: true
+            }]
+        };
+
+        // Create charts
+        new Chart(document.getElementById('authorChart'), {
+            type: 'bar',
+            data: authorData,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('yearChart'), {
+            type: 'line',
+            data: yearData,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

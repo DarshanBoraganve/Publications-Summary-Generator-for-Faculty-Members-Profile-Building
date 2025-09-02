@@ -1,0 +1,442 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode .container {
+  background: #2a2a2a;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar (Hamburger Menu) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Sidebar is hidden initially */
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(135deg, #007BFF, #0056b3); /* Gradient background */
+  padding-top: 20px;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  left: 0; /* Sidebar slides in */
+}
+
+.sidebar h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5em; /* Larger font size */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px;
+  text-align: center;
+  transition: background 0.3s; /* Smooth background transition */
+}
+
+.sidebar ul li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #007BFF;
+  z-index: 1100;
+  transition: transform 0.2s; /* Add transition for hover effect */
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.dark-mode .menu-toggle {
+  color: white;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 50px;
+  padding: 20px;
+}
+
+/* Input Field */
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+input:focus {
+  box-shadow: 0 0 10px #007BFF;
+  transform: scale(1.05);
+}
+
+/* Button Styles */
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Added box-shadow transition */
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+/* Dark Mode Toggle Button */
+#dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s; /* Smooth background transition */
+}
+
+#dark-mode-toggle:hover {
+  background: #0056b3; /* Darker shade on hover */
+}
+
+/* Table Container */
+.table-container {
+  overflow-x: auto;
+  margin: 20px auto;
+  max-width: 90%;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  transition: background 0.3s;
+}
+
+.dark-mode table {
+  background: #333;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+  transition: background 0.3s, color 0.3s;
+}
+
+th {
+  background-color: #007BFF;
+  color: white;
+}
+
+.dark-mode th {
+  background-color: #444;
+}
+
+tr {
+  transition: transform 0.2s;
+}
+
+tr:hover {
+  transform: scale(1.02);
+}
+
+/* Loading Animation */
+#loading {
+  display: none;
+  margin-top: 20px;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #007BFF;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+      width: 90%;
+  }
+
+  input {
+      width: 100%;
+  }
+
+  .menu-toggle {
+      font-size: 20px;
+  }
+
+  .sidebar {
+      width: 200px;
+  }
+}
+
+/* Chart Container */
+.trends-section {
+  background: white;
+  padding: 20px;
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.dark-mode .trends-section {
+  background: #2a2a2a;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+canvas {
+  max-width: 100%;
+  height: 400px;
+}
+
+/* Icon style */
+.card i {
+  font-size: 3em;
+  color: #4CAF50; /* Green color */
+  margin-bottom: 15px;
+}
+
+/* Card style */
+.card {
+  padding: 20px;
+  border-radius: 15px; /* More rounded corners */
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s; /* Added shadow transition */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Card lifts up on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Illustration style */
+.featured-publications img.illustration {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+  border-radius: 10px; /* Rounded corners for illustrations */
+}
+
+.featured-publications h3 {
+  font-size: 1.8em;
+  color: #333;
+}
+
+.featured-publications p {
+  font-size: 1.1em;
+  color: #555;
+  text-align: center; /* Centered text */
+}
+
+/* Container for the front page */
+.front-page-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background */
+}
+
+/* Responsive Grid Layout for Cards */
+.card {
+  width: 22%; /* Make each card take up 22% of the container */
+  background-color: #fff;
+  border-radius: 15px; /* More rounded corners */
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s; /* Added shadow transition */
+  margin-bottom: 20px; /* Space between rows if they wrap */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Card lifts up on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.card i {
+  font-size: 3em; /* Large icon */
+  color: #4CAF50; /* Icon color */
+  margin-bottom: 15px; /* Space between icon and text */
+}
+
+.card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+      width: 48%; /* Cards take 48% width on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+      width: 100%; /* Full-width cards on very small screens */
+  }
+}
+
+/* Styling for illustrations */
+.illustration {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px; /* Rounded corners for illustrations */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .card {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .card i {
+  color: #ffcc00; /* Icon color for dark mode */
+}
+
+/* Basic styles for hiding and showing content */
+.hidden {
+  display: none;
+}
+
+/* Styles for the cards */
+.card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.2s; /* Added transition */
+}
+
+.card button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+.featured-publications {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+

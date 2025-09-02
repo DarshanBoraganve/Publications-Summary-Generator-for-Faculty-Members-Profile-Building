@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Publications</title>
+    <a href="/" class="btn">Back to Home</a>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Featured Publications</h1>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Authors</th>
+                <th>Year</th>
+                <th>Venue</th>
+                <th>DOI</th>
+            </tr>
+            {% for pub in publications %}
+            <tr>
+                <td>{{ pub.title }}</td>
+                <td>{{ pub.authors }}</td>
+                <td>{{ pub.year }}</td>
+                <td>{{ pub.venue }}</td>
+                <td>
+                    {% if pub.doi != "N/A" %}
+                        <a href="https://doi.org/{{ pub.doi }}" target="_blank">View DOI</a>
+                    {% else %}
+                        N/A
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/" class="btn">Back to Home</a>
+    </div>
+</body>
+</html>
